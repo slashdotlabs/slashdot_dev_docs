@@ -3,10 +3,10 @@
 use Illuminate\Support\Str;
 
 return [
-    'baseUrl' => '',
+    'baseUrl' => 'http://docs.slashdotlabs.local',
     'production' => false,
-    'siteName' => 'Docs Starter Template',
-    'siteDescription' => 'Beautiful docs powered by Jigsaw',
+    'siteName' => 'Slashdotlabs Development Docs',
+    'siteDescription' => 'An overview of the tools we use and our project journeys',
 
     // Algolia DocSearch credentials
     'docsearchApiKey' => '',

@@ -1,27 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ccdb8a8c-1ed6-4727-be7b-f7a7ee141670" name="Default Changelist" comment="" />
+    <list default="true" id="ccdb8a8c-1ed6-4727-be7b-f7a7ee141670" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/source/index.blade.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/_layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_nav/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/_nav/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/docs/algolia-docsearch.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/docs/custom-404-page.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/docs/customizing-your-site.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/docs/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/projects/sdl-website.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/docs/navigation.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/source/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/index.blade.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <execution>
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/mnapoli/front-yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/vendor/michelf/php-markdown" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/samdark/sitemap" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/view" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/events" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/tightenco/jigsaw" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1YDfl1BCkKsoYIVspJkTo6SiQ9O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/_layouts" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/_layouts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/projects" />
+      <recent name="$PROJECT_DIR$/source/assets/img" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="./vendor/bin/jigsaw build" />
+      <command value="npm run local" />
+      <command value="vendor/bin/jigsaw build" />
+      <command value="/vendor/bin/jigsaw build" />
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -35,9 +116,63 @@
       <updated>1582482233100</updated>
       <workItem from="1582482236860" duration="1480000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: New post for the Publish Release Console App">
+      <created>1582638266548</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582638266548</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: New post for the Publish Release Console App" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: New post for the Publish Release Console App" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="367" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582629712691">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="367" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.742@0.0.1366.742" timestamp="1582629712691" />
+    <state x="235" y="0" key="CommitChangelistDialog2" timestamp="1582638266264">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1366.742@0.0.1366.742" timestamp="1582638266264" />
+    <state width="1324" height="166" key="GridCell.Tab.0.bottom" timestamp="1582625954338">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1324" height="166" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1582625954338" />
+    <state width="1324" height="166" key="GridCell.Tab.0.center" timestamp="1582625954334">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1324" height="166" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1582625954334" />
+    <state width="1324" height="166" key="GridCell.Tab.0.left" timestamp="1582625954332">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1324" height="166" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1582625954332" />
+    <state width="1324" height="166" key="GridCell.Tab.0.right" timestamp="1582625954336">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1324" height="166" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1582625954336" />
+    <state x="173" y="4" key="SettingsEditor" timestamp="1582623795183">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="173" y="4" key="SettingsEditor/0.0.1366.742@0.0.1366.742" timestamp="1582623795183" />
+    <state x="529" y="279" key="VCS.ChangelistChooser" timestamp="1582638302662">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="529" y="279" key="VCS.ChangelistChooser/0.0.1366.742@0.0.1366.742" timestamp="1582638302662" />
+    <state x="347" y="163" width="672" height="677" key="run.anything.popup" timestamp="1582625996673">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="347" y="163" width="672" height="677" key="run.anything.popup/0.0.1366.742@0.0.1366.742" timestamp="1582625996673" />
+    <state x="346" y="63" width="672" height="678" key="search.everywhere.popup" timestamp="1582635958797">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="346" y="63" width="672" height="678" key="search.everywhere.popup/0.0.1366.742@0.0.1366.742" timestamp="1582635958797" />
   </component>
 </project>
