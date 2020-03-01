@@ -1,10 +1,11 @@
 <?php
 
 use App\Listeners\GenerateSitemap;
-use TightenCo\Jigsaw\Jigsaw;
+use Illuminate\Container\Container;
+use TightenCo\Jigsaw\Events\EventBus;
 
-/** @var $container \Illuminate\Container\Container */
-/** @var $events \TightenCo\Jigsaw\Events\EventBus */
+/** @var $container Container */
+/** @var $events EventBus */
 
 /**
  * You can run custom code at different stages of the build process by
@@ -18,4 +19,5 @@ use TightenCo\Jigsaw\Jigsaw;
  */
 
 $events->afterBuild(GenerateSitemap::class);
+$events->afterBuild(App\Listeners\GenerateIndex::class);
 

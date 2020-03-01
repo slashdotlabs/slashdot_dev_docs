@@ -1,11 +1,12 @@
 ---
 title: Publish Release PHP Console App
 description: A create release automation tool for our wordpress plugin development
-extends: _layouts.article
+extends: _layouts.post
 section: content
 author: Stephen Wanyee
 author_link: https://github.com/steekam
 date: 2020-02-25
+categories: [tooling]
 ---
 
 ### First, some context
