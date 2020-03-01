@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Slashdotlabs Development</title>
+    <link href="https://docs.slashdotlabsprojects.com" />
+    <link type="application/atom+xml" rel="self" href="https://docs.slashdotlabsprojects.com/blog/feed.atom" />
+    <updated>2020-03-01T19:47:44+00:00</updated>
+    <id>https://docs.slashdotlabsprojects.com/blog/feed.atom</id>
+    <author>
+        <name></name>
+    </author>
+                <entry>
+    <id>https://docs.slashdotlabsprojects.com/blog/publish-console-app</id>
+    <link type="text/html" rel="alternate" href="https://docs.slashdotlabsprojects.com/blog/publish-console-app" />
+    <title>Publish Release PHP Console App</title>
+    <published>2020-02-25T00:00:00+00:00</published>
+    <updated>2020-02-25T00:00:00+00:00</updated>
+    <author>
+        <name>Stephen Wanyee</name>
+    </author>
+    <summary type="html">We use Github as our git versioning platform, so it made sense to use the repo releases feature to provide 
+versioning for plugins. So to create a release you have to create a tag then create an archive based off that tag. It&#039;s basically 
+like a......</summary>
+    <content type="html"><![CDATA[
+        <h3>First, some context</h3>
+
+<p>We use Github as our git versioning platform, so it made sense to use the repo releases feature to provide 
+versioning for plugins. So to create a release you have to create a tag then create an archive based off that tag. It's basically 
+like a savepoint for your code.</p>
+
+<p>Sounds easy enough right? However, we had to hook into the Wordpress API in our plugins to check for updates 
+in our respective repositories. Our solution was to have an <code>info.json</code> file on the master branch that would have have all the relevant 
+up-to-date information required for a plugin update notification.</p>
+
+<p>In that case, the whole <em>release</em> process includes updating the version number in the main plugin file and also updating 
+this <code>info.json</code> file. Most of the times I used to forget to bump the version in the plugin file or write the wrong 
+download url in the <code>info.json</code>. So we decided we should automate this using some sort of script.</p>
+
+<h3>The tool</h3>
+
+<p>From working with Gulp, a Javascript task runner, the first idea that came to mind was to write a task for this whole process. 
+Though eventually, I ended up considering running a PHP script in the CLI running all the required tasks:</p>
+
+<pre><code>- Bump the version in the plugin file
+- Create a tag with the new version
+- Push to the remote repo
+- Using the Github Api, create a release
+- Update `info.json` with the new download link
+- Push modified `info.json` to master
+</code></pre>
+
+<p>For a whole week I went into a rabbit hole of how to run CLI processes from a PHP script and displaying the output in a decent way. 
+I eventually landed on a Symfony Console Component. This made it even more easier and fun to create the mini dev tool.</p>
+
+<blockquote>
+  <p>Fun fact: The Laravel command line tools are built from this Symfony Console Component</p>
+</blockquote>
+
+<p>The tool made creating releases way faster and easier. Combined with standard guidlines like <a href="https://semver.org">Semantic Versioning</a> 
+the console application proved to be quite a valuable tool.</p>
+
+<h3>Caveats</h3>
+
+<p>We use <em>composer</em> to manage the dependencies in our plugins. A good optimization strategy before shipping a composer project, is to 
+generate the vendor folder without dev dependencies. The console app itself is run by dev dependencies, so 
+running <code>composer install --no-dev</code>, would remove the app's dependencies leading it to fail.</p>
+
+<p>So now we have to refactor the tool itself into another platform/language to allow composer optimization. We don't want to ship a bunch of 
+files we never utilise in the plugins. Though the ideal way of doing this versioning and optimization is to use a CI/CD pipelining tool like 
+Github actions. That's the next step for this tool.</p>
+
+<h3>Source Code</h3>
+
+<p>The tool is still pretty awesome, so I might consider extracting it into a package that also creates releases for non-wordpress projects. 
+You can still check out the source code in any of our current plugins on Github under <code>console_app</code> directory.</p>
+    ]]></content>
+</entry>
+    </feed>

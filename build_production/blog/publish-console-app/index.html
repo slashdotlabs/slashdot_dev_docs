@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="An overview of the tools we use and our project journeys">
+
+        <meta property="og:title" content="Publish Release PHP Console App | Slashdotlabs Development"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://docs.slashdotlabsprojects.com/blog/publish-console-app"/>
+        <meta property="og:description" content="An overview of the tools we use and our project journeys" />
+
+        <meta name="twitter:image:alt" content="Slashdotlabs Development">
+        <meta name="twitter:card" content="summary_large_image">
+
+        <title>Publish Release PHP Console App | Slashdotlabs Development</title>
+
+        <link rel="home" href="https://docs.slashdotlabsprojects.com">
+        <link rel="icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo-icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo-icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/logo-icons/favicon-16x16.png">
+
+
+            <meta property="og:title" content="Publish Release PHP Console App"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://docs.slashdotlabsprojects.com/blog/publish-console-app"/>
+    <meta property="og:description" content="A create release automation tool for our wordpress plugin development"/>
+    <link href="/blog/feed.atom" type="application/atom+xml" rel="alternate" title="Slashdotlabs Development Atom Feed">
+
+                    <!-- Insert analytics code here -->
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Miriam+Libre:400,700|Merriweather" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=bb0b82d43fba50aafbc8">
+    </head>
+
+    <body class="bg-gray-100 text-gray-800 leading-normal font-sans">
+        <div class="block flex-none h-2 bg-indigo-600"></div>
+        <div class="flex flex-col justify-between min-h-screen">
+
+                <header class="flex items-center h-20 py-4 shadow" role="banner">
+        <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+            <div class="flex items-center">
+                <a href="/" title="Slashdotlabs Development home" class="inline-flex items-center">
+                    <h1 class="text-lg md:text-xl text-blue-900 font-semibold hover:text-blue-600 my-0 pr-4">Slashdotlabs Development</h1>
+                </a>
+            </div>
+
+            <div id="vue-search" class="flex flex-1 justify-end items-center">
+                <search></search>
+
+                
+
+                
+            </div>
+        </div>
+    </header>
+
+    
+
+    <main role="main" class="container mx-auto px-6 md:px-8 py-8 flex-auto">
+            
+    <h1 class="leading-none mb-2">Publish Release PHP Console App</h1>
+
+    <p class="text-gray-700 text-lg md:mt-0">
+                    <a href="https://github.com/steekam"> Stephen Wanyee </a>
+                • February 25, 2020
+    </p>
+
+                        <a href="/blog/categories/tooling" title="View posts in tooling" class="inline-block bg-gray-300 hover:bg-blue-200 leading-loose tracking-wide text-gray-800 uppercase text-xs font-semibold rounded mr-4 px-3 pt-px">tooling</a>
+            
+    <div class="border-b border-blue-200 mb-10 mt-5 pb-4" v-pre>
+        <h3>First, some context</h3>
+
+<p>We use Github as our git versioning platform, so it made sense to use the repo releases feature to provide 
+versioning for plugins. So to create a release you have to create a tag then create an archive based off that tag. It's basically 
+like a savepoint for your code.</p>
+
+<p>Sounds easy enough right? However, we had to hook into the Wordpress API in our plugins to check for updates 
+in our respective repositories. Our solution was to have an <code>info.json</code> file on the master branch that would have have all the relevant 
+up-to-date information required for a plugin update notification.</p>
+
+<p>In that case, the whole <em>release</em> process includes updating the version number in the main plugin file and also updating 
+this <code>info.json</code> file. Most of the times I used to forget to bump the version in the plugin file or write the wrong 
+download url in the <code>info.json</code>. So we decided we should automate this using some sort of script.</p>
+
+<h3>The tool</h3>
+
+<p>From working with Gulp, a Javascript task runner, the first idea that came to mind was to write a task for this whole process. 
+Though eventually, I ended up considering running a PHP script in the CLI running all the required tasks:</p>
+
+<pre><code>- Bump the version in the plugin file
+- Create a tag with the new version
+- Push to the remote repo
+- Using the Github Api, create a release
+- Update `info.json` with the new download link
+- Push modified `info.json` to master
+</code></pre>
+
+<p>For a whole week I went into a rabbit hole of how to run CLI processes from a PHP script and displaying the output in a decent way. 
+I eventually landed on a Symfony Console Component. This made it even more easier and fun to create the mini dev tool.</p>
+
+<blockquote>
+  <p>Fun fact: The Laravel command line tools are built from this Symfony Console Component</p>
+</blockquote>
+
+<p>The tool made creating releases way faster and easier. Combined with standard guidlines like <a href="https://semver.org">Semantic Versioning</a> 
+the console application proved to be quite a valuable tool.</p>
+
+<h3>Caveats</h3>
+
+<p>We use <em>composer</em> to manage the dependencies in our plugins. A good optimization strategy before shipping a composer project, is to 
+generate the vendor folder without dev dependencies. The console app itself is run by dev dependencies, so 
+running <code>composer install --no-dev</code>, would remove the app's dependencies leading it to fail.</p>
+
+<p>So now we have to refactor the tool itself into another platform/language to allow composer optimization. We don't want to ship a bunch of 
+files we never utilise in the plugins. Though the ideal way of doing this versioning and optimization is to use a CI/CD pipelining tool like 
+Github actions. That's the next step for this tool.</p>
+
+<h3>Source Code</h3>
+
+<p>The tool is still pretty awesome, so I might consider extracting it into a package that also creates releases for non-wordpress projects. 
+You can still check out the source code in any of our current plugins on Github under <code>console_app</code> directory.</p>
+    </div>
+
+    <nav class="flex justify-between text-sm md:text-base">
+        <div>
+                    </div>
+
+        <div>
+                    </div>
+    </nav>
+    </main>
+
+
+            <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+                <div class="container px-4 mx-auto text-center">
+                    Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a>
+                    and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
+                </div>
+            </footer>
+        </div>
+
+        <script src="/assets/build/js/main.js?id=99f9869e1ac415203031"></script>
+
+            </body>
+</html>
